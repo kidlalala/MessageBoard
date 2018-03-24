@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>错误</title>
+</head>
+<body>
+    <hgroup>
+        <h1>错误。</h1>
+        <h2>@ViewBag.ErrorMes</h2>
+    </hgroup>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+</body>
+</html>
+
+
+

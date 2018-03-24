@@ -1,0 +1,67 @@
+﻿@model CourseDesign.Models.User
+
+@{
+    ViewBag.Title = "LoginIN";
+}
+
+<h2>Your Information</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Introduction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Introduction)
+        </dd>
+
+    </dl>
+</div>
+
+@*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="DeleteYourAccount" class="btn btn-default" />
+        </div>
+    </div>*@
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        @Html.ActionLink("DeleteYourAccount", "Delete", new { id = Model.ID })
+        @Html.ActionLink("Go To Message Board", "Index", "Messages")
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

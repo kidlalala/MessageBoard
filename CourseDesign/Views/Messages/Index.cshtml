@@ -1,0 +1,64 @@
+﻿ @model IEnumerable<CourseDesign.Models.Message>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome @ViewBag.UserName</h2>
+
+<p>
+    @Html.ActionLink("My Messages","MyMessages")
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Topic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MsgTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Topic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MsgTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Reply", "Create", "Replies",new { id=item.MSG_ID}, new { }) |
+            @Html.ActionLink("Details", "Show", "Messages",new { id=item.MSG_ID }, new { }) |
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Logout", "Index","Users")
+</div>

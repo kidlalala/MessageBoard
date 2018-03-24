@@ -1,0 +1,50 @@
+﻿@model CourseDesign.Models.Reply
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reply</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReplyContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReplyContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReplyTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReplyTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReplyUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReplyUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSG_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MSG_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReplyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
